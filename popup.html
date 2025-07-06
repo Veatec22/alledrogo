@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Allegro Dniówka / Godzinówka</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+  <img src="images/logo.png" alt="Allegro Dniówka Logo" class="popup-logo">
+
+  <div class="plugin-toggle-container">
+    <label for="pluginEnabledToggle" class="toggle-label">Wtyczka włączona</label>
+    <label class="switch">
+      <input type="checkbox" id="pluginEnabledToggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <div id="mainControls">
+    <h1>Ustawienia</h1>
+
+    <div class="earnings-section">
+      <label for="monthlyEarnings">Miesięczne zarobki (PLN):</label>
+      <input type="number" id="monthlyEarnings" placeholder="Wpisz kwotę w PLN" min="0" value="10000">
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div id="advancedSettingsContainer">
+      <div class="form-section">
+        <h3>Konfiguracja zaawansowana</h3>
+        <button id="toggleAdvancedSettings">Pokaż / Ukryj</button>
+      </div>
+
+      <div id="advancedSettings" style="display:none;">
+        <p class="description">Ustawienia dotyczące czasu pracy do przeliczania cen.</p>
+        <div class="earnings-section">
+          <label for="hoursPerDay">Godzin dziennie:</label>
+          <input type="number" id="hoursPerDay" placeholder="Np. 8" min="1" value="8">
+        </div>
+        <div class="earnings-section">
+          <label for="daysPerWeek">Dni w tygodniu:</label>
+          <input type="number" id="daysPerWeek" placeholder="Np. 5" min="1" value="5">
+        </div>
+      </div>
+    </div>
+
+    <button id="saveEarnings">Zapisz</button>
+    <p id="status"></p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

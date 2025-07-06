@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "alledrogo",
+  "version": "1.1",
+  "description": "Przelicza ceny na Allegro na czas pracy.",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["*://*.allegro.pl/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.allegro.pl/*"],
+      "js": ["scripts/utils.js", "scripts/allegroContent.js"]
+    }
+  ]
+}
